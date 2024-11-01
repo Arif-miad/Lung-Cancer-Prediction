@@ -81,6 +81,7 @@ display_images(train_generator)
 display_images(validation_generator)
 ```
 
+![Lung Cancer Sample Image](images/lung-cancer-sample.png)
 
 ## Model Definition
 A convolutional neural network (CNN) was defined to classify the lung images effectively. The model architecture consists of several convolutional and pooling layers, followed by fully connected layers for final classification.
