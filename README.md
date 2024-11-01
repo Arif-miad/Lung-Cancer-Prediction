@@ -56,6 +56,32 @@ The data preprocessing steps included:
 ## Data Visualization
 Key visualizations included class distributions and sample images per class to gain insights into the dataset.
 
+```python
+def display_images(generator, num_images=4):
+    fig, axs = plt.subplots(nrows=num_images, ncols=2, figsize=(10, 10))
+    axs = axs.flatten()
+
+    for i in range(num_images):
+        img, label = next(generator)
+        axs[2*i].imshow(img[0])
+        axs[2*i].set_title('Original Image')
+        axs[2*i].axis('off')
+
+        axs[2*i+1].imshow(img[0])
+        axs[2*i+1].set_title('Augmented Image')
+        axs[2*i+1].axis('off')
+
+    plt.tight_layout()
+    plt.show()
+
+# Display original and augmented images for training data
+display_images(train_generator)
+
+# Display original and augmented images for validation data
+display_images(validation_generator)
+```
+
+
 ## Model Definition
 A convolutional neural network (CNN) was defined to classify the lung images effectively. The model architecture consists of several convolutional and pooling layers, followed by fully connected layers for final classification.
 
